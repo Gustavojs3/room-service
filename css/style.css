@@ -1,0 +1,57 @@
+
+
+img{
+    max-width: 100%;
+}
+
+
+/*---------------Index--------------*/
+.body-index{
+    background-color: black;
+    height: 100%;
+    width: 100%;
+}
+.index-logo{
+    width: 56%;
+    height: 100%;
+    margin: 13% 22%;
+}
+@media only screen and (max-width: 767px){
+    .index-logo{
+        width: 90%;
+        margin: 70% 5%;
+    }
+}
+
+/*---------------Home--------------*/
+
+.body-home{
+    background-color: black;
+}
+
+.cabeçalho-logo{
+    display: inline-block;
+    height: 100%;
+    width: 7%;
+}
+.cabeçalho-menu{
+    display: inline-block;
+}
+.cabeçalho-menu li{
+    display: inline-block;
+}
+.home-option img{
+    margin-bottom: -1%;
+}
+.home-option a{
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    margin: 0 38%;
+    margin-top: -70px;
+    border: 1px solid red;
+    border-radius: 10px;
+    padding: 2% 2.3%;
+}
+#quarto{
+    padding: 2% 4.3%; 
+}
