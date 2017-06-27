@@ -6,6 +6,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="css/style.css" rel="stylesheet">
+    <style>
+        .hide{
+            display: none;
+        }
+        .show{
+            display: inline;
+        }
+    </style>
 </head>
 
 <body>
@@ -36,13 +44,13 @@
             <option value="CPF">CPF</option>
             <option value="CNH">CNH</option>
         </select>
-        <input type="text" name="txtDocumento">
+        <!--<input type="text" name="txtDocumento">-->
         <br><br>
-        <input type="text" id="rg" maxlength="10" placeholder="digite seu RG">
+        <input class="hide" type="text" id="rg" maxlength="10" placeholder="digite seu RG">
         <br>
-        <input type="number" id="cpf" maxlength="10" placeholder="digite seu CPF">
+        <input class="hide" type="number" id="cpf" maxlength="10" placeholder="digite seu CPF">
         <br>
-        <input type="number" id="cnh" maxlength="10" placeholder="digite seu CNH">
+        <input class="hide" type="number" id="cnh" maxlength="10" placeholder="digite seu CNH">
         <br><br>
         <label class="rotulo" for="observacoes">Observações:</label>
         <br>
