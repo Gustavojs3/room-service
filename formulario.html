@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <title>Formulario</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <h1>Formulario de Cadastro</h1>
+    <form action="">
+        <label class="rotulo" for="nome">Nome:</label>
+        <input type="text" id="nome" size="50">
+        <br><br>
+        <label class="rotulo" for="idade">Idade:</label>
+        <input type="number" id="idade" min="18" max="150">
+        <br><br>
+        <label class="rotulo">Sexo:</label>
+        <br>
+        <input type="radio" value="masculino" name="sexo"> Masculino
+        <br>
+        <input type="radio" value="femenino" name="sexo"> Femenino
+        <br>
+        <input type="radio" value="outro" name="sexo"> Outro
+        <br><br>
+        <input type="checkbox" value="brasileiro" name="brasileiro" onchange="mostrarEasterEgg();">
+        <label>É brasileiro?</label>
+        <span id="easter-egg"></span>
+        <br><br>
+        <label for="documento">Documento: </label>
+        <select id="documento">
+            <option value="" selected>Selecione...</option>
+            <option value="RG">RG</option>
+            <option value="CPF">CPF</option>
+            <option value="CNH">CNH</option>
+        </select>
+        <input type="text" name="txtDocumento">
+        <br><br>
+        <input type="text" id="rg" maxlength="10" placeholder="digite seu RG">
+        <br>
+        <input type="number" id="cpf" maxlength="10" placeholder="digite seu CPF">
+        <br>
+        <input type="number" id="cnh" maxlength="10" placeholder="digite seu CNH">
+        <br><br>
+        <label class="rotulo" for="observacoes">Observações:</label>
+        <br>
+        <textarea id="observacoes" style="resize:none;" rows="8" cols="45"></textarea>
+        <br><br>
+        <input type="button" id="cadastrar" value="Cadastrar" onclick="validarFormulario();">
+
+    </form>
+    <script>
+        function validarFormulario() {
+            var nome = document.getElementById("nome").value;
+            // -----Numero de caracter-----
+            // if (nome.length == 0) {
+            //     alert ("vazio");
+            // }
+
+            // Validando nome
+            if (nome.trim() == "") {
+                document.getElementById("nome").value = "";
+                console.log("Insira um nome!");
+                return;
+            }
+
+            // Validando idade
+            var idade = document.getElementById("idade").value;
+            idade = parseInt(idade);
+            if (isNaN(idade)) {
+                idade = 0;
+            }
+            if (idade < 18 || idade > 150) {
+                console.log("Idade mínima é 18 e a máxima é 150");
+                return;
+            }
+            // Validando sexo
+            var sexo = document.getElementsByName("sexo");
+            var selectSexo = false;
+            for (var i = 0; i < sexo.length; i++) {
+                console.log(sexo[i]);
+
+                if (sexo[i].checked == true) {
+                    selectSexo = true;
+                }
+            }
+            if (selectSexo == false) {
+                console.log("Escolha um sexo");
+                return;
+            }
+
+            var doc = document.getElementById("documento").value;
+            if (condition) {
+                
+            }
+
+            // alert ("Tudo ok!!!");
+        }
+        function mostrarEasterEgg() {
+            // Mostrando easter-egg
+            var br = document.getElementsByName("brasileiro");
+            var brasileiro = br[0].checked;
+            if (brasileiro) {
+                document.getElementById("easter-egg").innerText = "Hue Hue";
+            }
+            else {
+                document.getElementById("easter-egg").innerText = "Hello Gringo";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
