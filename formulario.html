@@ -44,13 +44,7 @@
             <option value="CPF">CPF</option>
             <option value="CNH">CNH</option>
         </select>
-        <!--<input type="text" name="txtDocumento">-->
-        <br><br>
-        <input class="hide" type="text" id="rg" maxlength="10" placeholder="digite seu RG">
-        <br>
-        <input class="hide" type="number" id="cpf" maxlength="10" placeholder="digite seu CPF">
-        <br>
-        <input class="hide" type="number" id="cnh" maxlength="10" placeholder="digite seu CNH">
+        <input type="text" placeholder="doido" name="txtDocumento">
         <br><br>
         <label class="rotulo" for="observacoes">Observações:</label>
         <br>
@@ -98,11 +92,29 @@
                 console.log("Escolha um sexo");
                 return;
             }
-
+            debugger;
+            // Validando documento
             var doc = document.getElementById("documento").value;
-            if (condition) {
-                
+            var txtDoc = document.getElementsByName("txtDocumento");
+            var placeh = "";
+
+            if (doc == "RG") {
+                placeh = "00.000.000-0";
             }
+            else if (doc == "CPF") {
+                placeh = "000.000.000-00";
+            }
+            else if (doc == "CNH") {
+                placeh = "0000000000000";
+            }
+            else {
+                console.log("Escolha um tipo de documento");
+            }
+
+            document.getElementsByName("txtDocumento").placeholder = placeh;
+            console.log(document.getElementsByName("txtDocumento").placeholder = placeh);
+
+            // document.getElementsByName("txtDocumento").value = txtDoc;
 
             // alert ("Tudo ok!!!");
         }

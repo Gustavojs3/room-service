@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <title>Formulario 2</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="js/script.js"></script>
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        .hide{
+            display: none;
+        }
+        .show{
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Formulario de Cadastro</h1>
+    <form action="">
+        <label class="rotulo" for="nome">Nome:</label>
+        <input type="text" id="nome" size="50">
+        <br><br>
+        <label class="rotulo" for="idade">Idade:</label>
+        <input type="number" id="idade" min="18" max="150">
+        <br><br>
+        <label class="rotulo">Sexo:</label>
+        <br>
+        <input type="radio" value="masculino" name="sexo"> Masculino
+        <br>
+        <input type="radio" value="femenino" name="sexo"> Femenino
+        <br>
+        <input type="radio" value="outro" name="sexo"> Outro
+        <br><br>
+        <input type="checkbox" value="brasileiro" name="brasileiro" onchange="mostrarEasterEgg();">
+        <label>É brasileiro?</label>
+        <span id="easter-egg"></span>
+        <br><br>
+        <label for="documento">Documento: </label>
+        <select id="documento" onchange="alteraDocumentoInput(this.value);">
+            <option value="" selected>Selecione...</option>
+            <option value="RG">RG</option>
+            <option value="CPF">CPF</option>
+            <option value="CNH">CNH</option>
+        </select>
+        <input class="hide" type="text" id="rg" maxlength="10" placeholder="digite seu RG">
+        <input class="hide" type="number" id="cpf" maxlength="10" placeholder="digite seu CPF">
+        <input class="hide" type="number" id="cnh" maxlength="10" placeholder="digite seu CNH">
+        <br><br>
+        <label class="rotulo" for="observacoes">Observações:</label>
+        <br>
+        <textarea id="observacoes" style="resize:none;" rows="8" cols="45"></textarea>
+        <br><br>
+        <input type="button" id="cadastrar" value="Cadastrar" onclick="validarFormulario();">
+    </form>
+    <script>
+
+    </script>
+
+</body>
+</html>
